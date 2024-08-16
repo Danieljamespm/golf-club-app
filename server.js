@@ -27,7 +27,6 @@ MongoClient.connect(dbConnectionStr)
         })
 
         app.post('/addClub', (request, response) => {
-            console.log(request.body)
             db.collection('Golf-Club').insertOne({clubLength: request.body.golfClub, clubAdded: true})
             .then(result => {
                 console.log('Club Added')
@@ -38,8 +37,7 @@ MongoClient.connect(dbConnectionStr)
 
 
         app.delete('/deleteClub', (request, response) => {
-            console.log(request)
-            db.collection('Golf-Club').deleteOne({clubLength: request.body.itemFromJS})
+        db.collection('Golf-Club').deleteOne({clubLength: request.body.itemFromJS})
             .then(result => {
                 console.log('Club Deleted')
                 response.json('Club Deleted')

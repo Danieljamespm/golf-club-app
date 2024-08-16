@@ -1,6 +1,7 @@
 const deleteBtn = document.querySelectorAll('.fa-trash')
 
 
+
 Array.from(deleteBtn).forEach((element) => {
     element.addEventListener('click', deleteClub)
 })
@@ -10,10 +11,11 @@ Array.from(deleteBtn).forEach((element) => {
 
 async function deleteClub(){
     const itemText = this.parentNode.childNodes[1].innerText
+    console.log(this.parentNode.childNodes[1])
     try {
         const response = await fetch('deleteClub', {
             method: 'delete',
-            headers: {'Content-Type': 'applications/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'itemFromJS': itemText
                 
