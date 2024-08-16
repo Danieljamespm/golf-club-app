@@ -10,8 +10,8 @@ Array.from(deleteBtn).forEach((element) => {
 
 
 async function deleteClub(){
-    const itemText = this.parentNode.childNodes[1].innerText
-    console.log(this.parentNode.childNodes[1])
+    const itemText = this.parentNode.childNodes[3].innerText
+    console.log(this.parentNode.childNodes[3])
     try {
         const response = await fetch('deleteClub', {
             method: 'delete',
